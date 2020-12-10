@@ -1,38 +1,156 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+/* basic stylings ------------------------------------------ */
+
+.container {
+  font-family: 'Roboto', sans-serif;
+  width: 600px;
+  margin: 30px auto 0;
+  display: block;
+  background: #FFF;
+  padding: 10px 50px 50px;
+  -webkit-box-shadow: 4px 9px 12px 4px rgba(0, 0, 0, 0.43);
+  box-shadow: 4px 9px 12px 4px rgba(0, 0, 0, 0.43);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h2 small {
+  font-weight: normal;
+  color: #888;
+  display: block;
+}
+
+.footer {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.footer a {
+  color: #53B2C8;
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
   pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
 }
 
-.App-link {
-  color: #61dafb;
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
-@keyframes App-logo-spin {
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
   from {
-    transform: rotate(0deg);
+    background: #5264AE;
   }
   to {
-    transform: rotate(360deg);
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
   }
 }

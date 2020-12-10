@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import './materialStyles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="container">
+          <h2>Vyhledávání firmy</h2>
+          <form>
+              <div className="group">
+                  <input type="text" required/>
+                  <span className="highlight"/>
+                  <span className="bar"/>
+                  <label>Název firmy</label>
+              </div>
+              <div className="group">
+                  <input type="text" required/>
+                  <span className="highlight"/>
+                  <span className="bar"/>
+                  <label>IČO</label>
+              </div>
+              <button className="materialButton" value="Vyhledat">Vyhledat</button>
+          </form>
+      </div>
   );
 }
 
