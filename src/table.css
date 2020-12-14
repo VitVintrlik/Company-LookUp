@@ -1,0 +1,115 @@
+.companyTable {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 75%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    margin: 80px auto 0;
+}
+
+.companyTable td, .companyTable th {
+    text-align: center;
+    padding: 8px;
+}
+
+.companyTable td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.companyTable thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.companyTable thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.companyTable tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+
+@media (max-width: 767px) {
+    .companyTable {
+        display: block;
+        width: 100%;
+    }
+
+    .table-wrapper:before {
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+
+    .companyTable thead, .companyTable tbody, .companyTable thead th {
+        display: block;
+    }
+
+    .companyTable thead th:last-child {
+        border-bottom: none;
+    }
+
+    .companyTable thead {
+        float: left;
+    }
+
+    .companyTable tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+
+    .companyTable td, .companyTable th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+
+    .companyTable thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+
+    .companyTable tbody tr {
+        display: table-cell;
+    }
+
+    .companyTable tbody tr:nth-child(odd) {
+        background: none;
+    }
+
+    .companyTable tr:nth-child(even) {
+        background: transparent;
+    }
+
+    .companyTable tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+
+    .companyTable tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+
+    .companyTable tbody td {
+        display: block;
+        text-align: center;
+    }
+}
